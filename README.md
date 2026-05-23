@@ -57,27 +57,45 @@ Utilizando una grilla matemática como base, el sistema rompe la estática de un
 ### Estructuración y Grilla 
 Se inicializaron las variables de control del lienzo (tamañoMax, transparencia, columnas = 11, filas = 11) y el incrementador temporal (pulso). Luego se declaró el tamaño del lienzo con createCanvas(600, 600) y se estructuró el doble bucle anidado *for* para recorrer las posiciones de la grilla
 
+<img width="1080" height="810" alt="image1" src="https://github.com/user-attachments/assets/4cf8dbb3-c336-42c2-8bf6-6d886d089dc8" />
+
+
 ### Pruebas de Desfase y Capas Iniciales
 Se comenzaron a dibujar las primeras elipses aplicando desplazamientos algebraicos fijos en sus coordenadas espaciales (x + 10, y + 10, x - 4, y - 4), fue un proceso de prueba y error. Luego se introdujo la función sin() multiplicada por un factor de movimiento para modular de forma periódica la variable de tamaño, operando de forma localizada en la esquina superior izquierda del lienzo.
 
-### Bucle
-Se ajustó la correlación entre las variables de iteración i y j con la variable *espaciado* para proyectar el patrón en la totalidad del canvas de 600 x 600. El fondo se saturó visualmente debido a que los círculos negros centrales compartían el mismo cálculo de oscilación que las elipses de fondo.
+<img width="1080" height="810" alt="image0" src="https://github.com/user-attachments/assets/542aa183-c353-427c-b710-53adbbcaf1f1" />
+
 
 ### Colores y Círculo central negro
 Se aplicaron de manera estricta los colores del referente de Mike Joyce (*Swissted*), aislando las transparencias en los canales de color periféricos *let*. Luego se redefinieron los desplazamientos simétricos para cada capa de elipse y se fijó el tamaño del círculo negro central a una escala estática proporcional (tamañoNegro = tamañoMax * 0.5) para recuperar el contraste de la retícula original.
 
+<img width="1080" height="810" alt="image2 (1)" src="https://github.com/user-attachments/assets/fbe25105-7b59-4c7b-8910-6ed1de3fbd8f" />
+
+
+### Bucle
+Se ajustó la correlación entre las variables de iteración i y j con la variable *espaciado* para proyectar el patrón en la totalidad del canvas de 600 x 600. El fondo se saturó visualmente debido a que los círculos negros centrales compartían el mismo cálculo de oscilación que las elipses de fondo.
+
+<img width="1080" height="810" alt="image3" src="https://github.com/user-attachments/assets/2e7ac0af-a19f-4c02-a41d-b1246dca6de0" />
+
+
 ### Prueba y Error
 Se ajustaron los signos algebraicos de las elipses secundarias (x - 10, y + 10), permitiendo que las capas de color "se superpusieran" de forma armónica en torno al centro de cada módulo modular.
+
+<img width="1080" height="810" alt="image4" src="https://github.com/user-attachments/assets/357ca652-b271-4b89-8543-f4ce38960578" />
+
 
 ### Programación del Mouse
 Se implementó la condicional basada en la función de distancia dist(). Al aproximar el mouse a una celda, el sistema detecta que la distancia es menor a 40 y altera dinámicamente la escala del círculo negro del centro, expandiéndolo significativamente en tiempo real como respuesta.
 
+<img width="1080" height="810" alt="image7" src="https://github.com/user-attachments/assets/bddc7d5d-02c7-4073-80a1-8469a608fcce" />
+
+
 ###  Optimización y Mapeo Final
 Se limpió y refinó el código agregando funciones globales como *noStroke()* en el *setup()* para eliminar los bordes vectoriales. Luego se reemplazaron los factores de movimiento estipulados por la función *map()* vinculada directamente a los ejes del cursor del mouse. El eje MouseX controla de manera lineal el rango de escala de tamaño de las oscilaciones, y el eje del MouseY mapea de manera continua la intensidad global del movimiento, permitiendo controlar la velocidad del lienzo.
 
+<img width="1875" height="933" alt="aa" src="https://github.com/user-attachments/assets/77a6b0f8-7991-49a9-be7e-ef648618022c" />
+
 
 ## 6. Diagrama de Flujo
+<img width="1024" height="768" alt="Diagrama de flujo (1)" src="https://github.com/user-attachments/assets/6eab52ea-1ae1-4346-a59b-3e4906fffd1c" />
 
-A continuación se presenta el diagrama de flujo digital que explica detalladamente la lógica computacional del sistema, mapeando sus inputs, procesos repetitivos, condicionales de control y outputs visuales:
-
-![Diagrama de Flujo](./diagrama-de-flujo.png)
