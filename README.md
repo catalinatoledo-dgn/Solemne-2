@@ -40,9 +40,7 @@ Se genera un lienzo visual dinámico que renderiza a un frame constante en un pa
 
 
 ## link p5.js
-
-
-
+https://editor.p5js.org/catalinita/sketches/IUwi-toRE
 
 ## 3. Descripcion conceptual
 La idea central del proyecto busca traducir la estructura geométrica estática, rígida del Diseño Suizo y la vibración cultural del Post-Punk a un entorno digital interactivo. 
