@@ -37,3 +37,49 @@ En la pantalla se despliega una grilla ortogonal estructurada de 11 filas por 11
 Se genera un lienzo visual dinámico que renderiza a un frame constante en un patrón cinético en pantalla, actualizando de forma continua el tamaño de los círculos por desfase de onda y duplicando la escala del círculo negro central de cada celda según la proximidad del mouse.
 
 ## PROYECTO FINAL
+
+
+## link p5.js
+
+
+
+
+## 3. Descripcion conceptual
+La idea central del proyecto busca traducir la estructura geométrica estática, rígida del Diseño Suizo y la vibración cultural del Post-Punk a un entorno digital interactivo. 
+Utilizando una grilla matemática como base, el sistema rompe la estática de una pieza gráfica impresa tradicional, transformándola en un cartel vivo que reacciona físicamente al paso del tiempo y a la presencia del espectador.
+
+### Principios de diseño
+- Estructura y orden reticular
+- Ritmo y repetición
+- Contraste de color y forma
+- Movimiento
+- Foco y jerarquía interactiva
+
+## 4. Proceso de desarollo
+### Estructuración y Grilla 
+Se inicializaron las variables de control del lienzo (tamañoMax, transparencia, columnas = 11, filas = 11) y el incrementador temporal (pulso). Luego se declaró el tamaño del lienzo con createCanvas(600, 600) y se estructuró el doble bucle anidado *for* para recorrer las posiciones de la grilla
+
+### Pruebas de Desfase y Capas Iniciales
+Se comenzaron a dibujar las primeras elipses aplicando desplazamientos algebraicos fijos en sus coordenadas espaciales (x + 10, y + 10, x - 4, y - 4), fue un proceso de prueba y error. Luego se introdujo la función sin() multiplicada por un factor de movimiento para modular de forma periódica la variable de tamaño, operando de forma localizada en la esquina superior izquierda del lienzo.
+
+### Bucle
+Se ajustó la correlación entre las variables de iteración i y j con la variable *espaciado* para proyectar el patrón en la totalidad del canvas de 600 x 600. El fondo se saturó visualmente debido a que los círculos negros centrales compartían el mismo cálculo de oscilación que las elipses de fondo.
+
+### Colores y Círculo central negro
+Se aplicaron de manera estricta los colores del referente de Mike Joyce (*Swissted*), aislando las transparencias en los canales de color periféricos *let*. Luego se redefinieron los desplazamientos simétricos para cada capa de elipse y se fijó el tamaño del círculo negro central a una escala estática proporcional (tamañoNegro = tamañoMax * 0.5) para recuperar el contraste de la retícula original.
+
+### Prueba y Error
+Se ajustaron los signos algebraicos de las elipses secundarias (x - 10, y + 10), permitiendo que las capas de color "se superpusieran" de forma armónica en torno al centro de cada módulo modular.
+
+### Programación del Mouse
+Se implementó la condicional basada en la función de distancia dist(). Al aproximar el mouse a una celda, el sistema detecta que la distancia es menor a 40 y altera dinámicamente la escala del círculo negro del centro, expandiéndolo significativamente en tiempo real como respuesta.
+
+###  Optimización y Mapeo Final
+Se limpió y refinó el código agregando funciones globales como *noStroke()* en el *setup()* para eliminar los bordes vectoriales. Luego se reemplazaron los factores de movimiento estipulados por la función *map()* vinculada directamente a los ejes del cursor del mouse. El eje MouseX controla de manera lineal el rango de escala de tamaño de las oscilaciones, y el eje del MouseY mapea de manera continua la intensidad global del movimiento, permitiendo controlar la velocidad del lienzo.
+
+
+## 6. Diagrama de Flujo
+
+A continuación se presenta el diagrama de flujo digital que explica detalladamente la lógica computacional del sistema, mapeando sus inputs, procesos repetitivos, condicionales de control y outputs visuales:
+
+![Diagrama de Flujo](./diagrama-de-flujo.png)
