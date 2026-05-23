@@ -38,6 +38,7 @@ Se genera un lienzo visual dinámico que renderiza a un frame constante en un pa
 
 ## PROYECTO FINAL
 
+[20260522-234209.webm](https://github.com/user-attachments/assets/8a31aec4-7403-4dac-930f-e5a0233cedc2)
 
 ## link p5.js
 https://editor.p5js.org/catalinita/sketches/IUwi-toRE
